@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const API_KEY = "545085ab";
-const SEARCH_TERMS = ["avengers", "harry potter"];
+const SEARCH_TERMS = ["avengers", "harry potter", "batman"];
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -67,16 +67,16 @@ const Movie = () => {
         </div>
       </div>
       <h4>Trending Now</h4>
-      <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 mb-4 g-3">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-3 mb-4">
         {loading ? (
           <div>Load</div>
         ) : (
           movies.map((movie) => (
             <div className="col" key={movie.imdbID}>
               <div
-                className="movie-poster-wrapper"
+                className="movie-poster-wrapper mb-4"
                 style={{
-                  width: "250px",
+                  width: "100%",
                   height: "140px",
                   margin: "0 auto",
                   overflow: "hidden",
@@ -100,6 +100,7 @@ const Movie = () => {
                   }}
                 />
               </div>
+              <h4></h4>
             </div>
           ))
         )}
